@@ -5,13 +5,13 @@ const bot = new commando.Client({
   commandPrefix: prefix
 });
 
-class announceCommand extends commando.Command {
+class sayCommand extends commando.Command {
   constructor(client) 
   {
     super(client, {
-      name: 'announce', 
+      name: 'say', 
       group: 'network',
-      memberName: 'announce',
+      memberName: 'say',
       description: "Announces a message in #announcements"
     });
   }
@@ -21,8 +21,6 @@ class announceCommand extends commando.Command {
     let announcementargs = message.content.slice(prefix.length).split(/ + /); //MAIN ARGS
     let announcementmessage = announcementargs.join(" ").slice(9);
 
-    let announcementschannel = message.guild.channels.find(`name`, "📢✧･ﾟประกาศ");
-    if(!announcementschannel) return message.channel.send("Couldn't find the announcements channel");
     var supportteamrole = message.guild.roles.find(`name`, "🤖|Staff");
     if (!message.member.roles.has(supportteamrole.id)) return message.channel.send("Insufficient permission. You do not have permission to announce messages")
 
@@ -32,8 +30,8 @@ class announceCommand extends commando.Command {
     .addField("**__Announcement__**", `${announcementmessage}`)
     .setTimestamp()
 
-    announcementschannel.send(announcementmessageembed);
-    announcementschannel.send("@everyone @here")
+    message.channel.send(announcementmessageembed);
+    message.channel.send("@everyone @here");
   }
 }
 
