@@ -33,7 +33,7 @@ class helpopCommand extends commando.Command {
             .addField('**Request Location**', message.channel)
             .addField('**Request Time**', message.createdAt)
 
-            let logschannel = message.guild.channels.find(`name`, "logs");
+            let logschannel = message.guild.channels.find(`name`, "🔧✧･ﾟระบบทุกอย่าง");
             if(!logschannel) return message.channel.send("Couldn't find the logs channel");
 
             message.delete(3000);
