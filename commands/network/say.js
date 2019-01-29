@@ -25,7 +25,7 @@ class sayCommand extends commando.Command {
     if(!message.member.hasPermission("VIEW_AUDIT_LOG")) return message.channel.send("You do not have the permission announce messages");
 
     var announcementmessageembed = new Discord.RichEmbed()
-    .setTitle("**Phenomenal | Announcement**")
+    .setTitle("**Phenomenal | Say**")
     .setColor("#FFDF00")
     .addField("**__Announcement__**", `${announcementmessage}`)
     .setTimestamp()
