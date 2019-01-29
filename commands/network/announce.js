@@ -27,7 +27,7 @@ class announceCommand extends commando.Command {
     var announcementmessageembed = new Discord.RichEmbed()
     .setTitle("**Phenomenal | Announcement**")
     .setColor("#FFDF00")
-    .addField("**__Message__**", `${announcementmessage}`)
+    .addField("**__Announcement__**", `${announcementmessage}`)
     .setTimestamp()
 
     message.channel.send(announcementmessageembed);
