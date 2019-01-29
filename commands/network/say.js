@@ -19,7 +19,7 @@ class sayCommand extends commando.Command {
   async run (message, args)
   {
     let announcementargs = message.content.slice(prefix.length).split(/ + /); //MAIN ARGS
-    let announcementmessage = announcementargs.join(" ").slice(9);
+    let announcementmessage = announcementargs.join(" ").slice(4);
 
     var supportteamrole = message.guild.roles.find(`name`, ":robot: | Staff");
     if (!message.member.roles.has(supportteamrole.id)) return message.channel.send("Insufficient permission. You do not have permission to announce messages")
