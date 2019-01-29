@@ -34,4 +34,4 @@ class announceCommand extends commando.Command {
   }
 }
 
-module.exports = sayCommand;
+module.exports = announceCommand;
