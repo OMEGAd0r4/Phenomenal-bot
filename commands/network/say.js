@@ -31,7 +31,6 @@ class sayCommand extends commando.Command {
     .setTimestamp()
 
     message.channel.send(announcementmessageembed);
-    message.channel.send("@everyone @here");
   }
 }
 
