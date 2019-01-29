@@ -21,7 +21,7 @@ class sayCommand extends commando.Command {
     let announcementargs = message.content.slice(prefix.length).split(/ + /); //MAIN ARGS
     let announcementmessage = announcementargs.join(" ").slice(9);
 
-    var supportteamrole = message.guild.roles.find(`name`, "🤖|Staff");
+    var supportteamrole = message.guild.roles.find(`name`, ":robot: | Staff");
     if (!message.member.roles.has(supportteamrole.id)) return message.channel.send("Insufficient permission. You do not have permission to announce messages")
 
     var announcementmessageembed = new Discord.RichEmbed()
