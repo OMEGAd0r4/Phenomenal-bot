@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const commando = require('discord.js-commando')
-const prefix = ">";
+const prefix = ".";
 const bot = new commando.Client({
   commandPrefix: prefix
 });
@@ -10,7 +10,7 @@ class announce1Command extends commando.Command {
   {
     super(client, {
       name: 'announce1', 
-      group: 'voltpvp',
+      group: 'network',
       memberName: 'announce1',
       description: "Announces a message in #announcements"
     });
@@ -27,7 +27,7 @@ class announce1Command extends commando.Command {
     if (!message.member.roles.has(supportteamrole.id)) return message.channel.send("Insufficient permission. You do not have permission to announce messages")
 
     var announcementmessageembed = new Discord.RichEmbed()
-    .setTitle("**VoltPvP | Announcement**")
+    .setTitle("**Phenomenal | Announcement**")
     .setColor("#FFDF00")
     .addField("**__Announcement__**", `${announcementmessage}`)
     .setTimestamp()
