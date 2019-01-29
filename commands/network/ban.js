@@ -33,7 +33,7 @@ class banCommand extends commando.Command {
     .addField("Time", message.createdAt)
     .addField("Reason", bReason);
 
-    let incidentchannel = message.guild.channels.find(`name`, "logs");
+    let incidentchannel = message.guild.channels.find(`name`, "🔧✧･ﾟระบบทุกอย่าง");
     if(!incidentchannel) return message.channel.send("Can't find logs channel.");
 
     message.guild.member(bUser).ban(bReason);
