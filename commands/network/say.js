@@ -12,7 +12,7 @@ class sayCommand extends commando.Command {
       name: 'say', 
       group: 'network',
       memberName: 'say',
-      description: "Announces a message in #announcements"
+      description: "Announces a message"
     });
   }
 
@@ -22,7 +22,7 @@ class sayCommand extends commando.Command {
     let announcementmessage = announcementargs.join(" ").slice(4);
 
     var supportteamrole = message.guild.roles.find(`name`, ":robot: | Staff");
-    if (!message.member.roles.has(supportteamrole.id)) return message.channel.send("Insufficient permission. You do not have permission to announce messages")
+    if(!message.member.hasPermission("VIEW_AUDIT_LOG")) return message.channel.send("You do not have the permission announce messages");
 
     var announcementmessageembed = new Discord.RichEmbed()
     .setTitle("**Phenomenal | Announcement**")
